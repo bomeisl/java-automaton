@@ -1,1 +1,0 @@
-# bomeisl.github.io
