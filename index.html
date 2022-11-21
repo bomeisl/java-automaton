@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+  </head>
+  <style>
+  
+
+  * {    
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+
+  #em {
+  position: absolute;
+  padding: 10px;
+  top: 50px;
+  }
+
+  #gh {
+  position: absolute;
+  padding: 10px;
+  top: 140px;
+  }
+
+  #li {
+  position: absolute;
+  padding: 10px;
+  top: 230px;
+  }
+
+  #tw {
+  position: absolute;
+  padding: 10px;
+  top: 320px;
+  }
+
+
+  #fb {
+  position: absolute;
+  padding: 10px;
+  top: 410px;
+  }
+
+  .cells {
+  position: fixed;
+  text-align: center;
+  align-self: center;
+  }
+
+.child {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  align-self: center;
+}
+
+.child-conway {
+  position: absolute;
+  left:4000px;
+  top: 400px
+};
+
+.child-icons {
+  position: absolute;
+  left: 300px;
+  
+}
+
+.child-j5 {
+  position:absolute;
+  top: 710px;
+  left: 1402px;
+}
+
+#intro {
+  position: relative;
+  top: 490px;
+  left: 20px;
+  text-align: center;
+  font-size: 30pt;
+  color: dimgray;
+  font-weight: bold;
+}
+
+.column {
+  position: relative;
+  
+}
+
+.row {
+  position: absolute;
+  left: 300px;
+}
+
+.column-me {
+  position: absolute;
+  right: 0px;
+  top: 50px;
+}
+
+
+
+  </style>
+  <body>
+    <main></main>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+        <header>
+            <div class="child child-conway">
+              <canvas id="conway">
+                <script src="automaton.js"></script>
+              </canvas>
+            </div>
+
+            <div class="child child-icons">
+              <div class="column">
+                <div class="row">
+                  <a><img id="em" src="em.png" style="height:80px; width:auto"></a>
+                </div>
+                <div class="row">
+                  <a href="https://github.com/bomeisl"><img id="gh" src="github-icon.png" style="height:80px; width:auto"></a>
+                </div>
+                <div class="row">
+                  <a href="https://www.linkedin.com/in/kyle-bomeisl"><img id="li" src="li.png" style="height:80px; width:auto"></a>
+                </div>
+                <div class="row">
+                  <a href="https://twitter.com/kyle_bomeisl"><img id="tw" src="twitter-icon.png" style="height:80px; width:auto"></a>
+                </div>
+                <div class="row">
+                  <a href="https://www.facebook.com/profile.php?id=100011069407807"><img id="fb" src="fb-icon.png" style="height:80px; width:auto"></a>
+                </div>
+                <div id="intro">
+                  Mostly into Data Science, physics, applied mathematics, algorithm design, and Android architecture. <br>
+                  But we're both on the internet right now, so I'll do some web dev. <br> 
+                  Check it out: a cellular automaton I've visualized in real time, and animated with JavaScript.<br>
+                  Kind of looks like the ebb and flow of a beautiful digital sea...
+                </div>  
+              </div>
+              <div class="column column-me">
+                <img id="me" src="me-modified.png" style="height:420px; width:auto">
+              </div>  
+            </div>
+          </div>
+          
+        </header>
+          <div class="child-j5">
+            <img src="p5js.svg" style="height:110px; width:auto">
+          </div>
+        <div>
+          <div class="child-conwayCode">
+            <br><br>
+              <img src="screenshot.png" style="height: 800px; width:auto;">  
+          </div>
+
+
+        </div>
+  </body>
+</html>
+
+
