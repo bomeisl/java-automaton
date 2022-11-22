@@ -2,13 +2,12 @@ let row = 250, col = 250;
 let booleanGrid = createBooleanArray();
 
 function setup() {
-    height = 800;
-    width = windowWidth;
-    let master = createCanvas(Windowwidth, 1000);
+    let master = createCanvas(windowWidth, 1000);
     master.id('master')
     frameRate(10);
     init()
 }
+
 
 function draw() {
     var back_color = color(233,233,233);
