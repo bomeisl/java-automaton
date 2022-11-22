@@ -8,11 +8,12 @@ function setup() {
     init()
 }
 
-onresize = (event) => {let master = createCanvas(windowWidth, windowHeight);};
-
+function windowResized() {
+    master = resizeCanvas(windowWidth, windowHeight);
+  }
 
 function draw() {
-    var back_color = color(233,233,233);
+    var back_color = color(235,235,235);
     background(back_color);
     let name = 'Kyle Bomeisl'
     //let conway = " cells are alive in Kyle's JS implementation of "
