@@ -8,7 +8,7 @@ function setup() {
     init()
 }
 
-onresize = (event) => {let master = createCanvas(windowWidth, 1000);};
+onresize = (event) => {let master = createCanvas(windowWidth, windowHeight);};
 
 
 function draw() {
