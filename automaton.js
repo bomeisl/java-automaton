@@ -4,7 +4,7 @@ let booleanGrid = createBooleanArray();
 function setup() {
     height = 800;
     width = width;
-    let master = createCanvas(2000, 700);
+    let master = createCanvas(width, height);
     master.id('master')
     frameRate(10);
     init()
