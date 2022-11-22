@@ -8,6 +8,8 @@ function setup() {
     init()
 }
 
+onresize = (event) => {let master = createCanvas(windowWidth, 1000);};
+
 
 function draw() {
     var back_color = color(233,233,233);
