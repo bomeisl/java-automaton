@@ -2,7 +2,7 @@ let row = 250, col = 250;
 let booleanGrid = createBooleanArray();
 
 function setup() {
-    let master = createCanvas(windowWidth, 1000);
+    let master = createCanvas(windowWidth, windowHeight);
     master.id('master')
     frameRate(10);
     init()
