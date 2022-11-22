@@ -33,11 +33,11 @@ function draw() {
 
     }
     stroke(233);
-    textSize(148);
+    textSize(108);
     textFont("Georgia");
     fill(0, 0, 0);
     textAlign(CENTER);
-    text(name, 550, 157, 760, 360);
+    text(name, 550, 357, 760, 360);
     var cellTotal = sumBooleanArray(booleanGrid);
     lifeLogic();
     //textSize(28);
