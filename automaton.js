@@ -3,8 +3,8 @@ let booleanGrid = createBooleanArray();
 
 function setup() {
     height = 800;
-    width = width;
-    let master = createCanvas(width, height);
+    width = windowWidth;
+    let master = createCanvas(Windowwidth, 1000);
     master.id('master')
     frameRate(10);
     init()
