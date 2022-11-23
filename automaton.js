@@ -1,5 +1,7 @@
 let row = 250, col = 250;
 let booleanGrid = createBooleanArray();
+$(window).height();
+$(window).width();
 
 function setup() {
     let master = createCanvas(windowWidth, windowHeight);
@@ -37,7 +39,7 @@ function draw() {
     textFont("Georgia");
     fill(0, 0, 0);
     textAlign(CENTER);
-    text(name, 550, 357, 760, 360);
+    //text(name, 550, 557, 760, 360);
     var cellTotal = sumBooleanArray(booleanGrid);
     lifeLogic();
     //textSize(28);
