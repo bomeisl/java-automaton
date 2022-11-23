@@ -182,24 +182,17 @@
   padding: 0;
   margin: 0;
   position: absolute;
-  align-content: top;
+  align-content: flex-start;
   top: 60%;
   left: 0%;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 36px;
+  font-size: 1.5vw;
   font-weight: bolder;
-  text-align: left;
+  text-align: start;
   color: lightslategrey;
   background: rgba(0, 0, 0, 0.7);
   width: windowWidth;
   white-space: pre-wrap;
-}
-
-#desc {
-  white-space: pre-wrap;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .codeSquare {
@@ -216,6 +209,35 @@
   text-align: left;
 }
 
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
+  }
+}
+
+#cursor {
+  position: absoulte;
+  left: 0;
+  top: 0;
+}
+
+#line1 {
+  position: absoulte;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#line2 {
+  position: absoulte;
+  left: 0;
+  top: 0;
+}
+
+#filler {
+  white-space: normal;
+}
 
   </style>
   <body>
@@ -229,10 +251,6 @@
           <script src="automaton.js"></script>
         </canvas>
         
-        
-          
-      
-          
       
           <div id="infoi"> 
             <div class="foreground" id="column1">          
@@ -257,49 +275,8 @@
             <img id="mypic" src="me-modified.png" style="max-width:20%">
             <h1 id="name">{Kyle Bomeisl}</h1>
           </div>
-          <div id="intro"> 
-            <p id="desc">
-            <script>
-              var i = 0;              
-              let blurb1 = `//Mostly into Data Science, physics, applied mathematics, algorithm design, and Android architechture.              
-
-`; 
-
-              //let blurb4 = "//Kind of looks like the ebb and flow of a beautiful digital sea sparkling in the sun...";           
-              
-              setInterval(function(){
-    
-                document.getElementById("intro").innerHTML+=blurb1.charAt(i);
-                i++},5); 
-            </script>
-            
-            <script>
-            
-              var j = 0;
-              setTimeout(() => {  
-              let blurb2 = `//But we\'re both on the internet right now, so I\'ll do some web dev. Check it out:
-              
-`;           
-              setInterval(function(){
-    
-                document.getElementById("intro").innerHTML+=blurb2.charAt(j);
-                j++},5); 
-              }, 5000); 
-            </script>
-
-            <script>
-              var k = 0;
-              setTimeout(() => {  
-              let blurb3 = `//a cellular automaton I\'m rendering in real time, and animating with JavaScript.`;             
-              setInterval(function(){
-    
-                document.getElementById("intro").innerHTML+=blurb3.charAt(k);
-                k++},5); 
-              }, 8000);  
-            </script>
-          </p>  
-                            
-          </div>
+          <div id="intro"><script src="typeIntro.js"></script></div>
+          
 
           <div class="codeSquare">
             <p>
