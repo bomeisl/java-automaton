@@ -86,7 +86,7 @@
 .intro {
   position: absolute;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1vw;
   color: dimgray;
   font-weight: bold;
 }
@@ -114,7 +114,7 @@
 #column1 {
   position: absolute;
   left: 27%;
-  top: 2%;
+  top: 1%;
 }
 
 #conwayCode {
@@ -126,19 +126,19 @@
 
 #me {
   position: absolute;
-  top: 10%;
-  left: 5%;
+  top: 8%;
+  left: 3%;
 }
 
 #j5 {
   position: absolute;
-  top: 85%;
+  top: 53%;
   left: 83%;
 }
 
 #jq {
   position: absolute;
-  top: 85%;
+  top: 53%;
   left: 93%;
 }
 
@@ -187,15 +187,42 @@
 }
 
 #intro{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  align-content: top;
+  top: 60%;
+  left: 0%;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  text-align: left;
+  color: lightslategrey;
+  background: rgba(0, 0, 0, 0.7);
+  width: windowWidth;
+  white-space: pre-wrap;
 }
+
+.codeSquare {
+  position: absolute;
+  top: 15%;
+  left: 80%;
+  background: rgba(2, 11, 92, 0.4) 
+}
+
+#introBlurb {
+  position: absolute;
+  top:0;
+  left:0;
+  text-align: left;
+}
+
 
   </style>
   <body>
+
     <main></main>
+   
     
       <header>
 
@@ -203,11 +230,9 @@
           <script src="automaton.js"></script>
         </canvas>
         
-        <div class="foreground">
-
-        </div>
+        
           
-          
+      
           
       
           <div id="infoi"> 
@@ -229,29 +254,79 @@
             </div>
           </div>
             
-
-          
-              
-          <div id="row2">
-            
-          </div> 
-
-          <div class="child" id="conwayCode">
-            <br><br>
-              <img src="screenshot.png" style="width:windowWidth; height: auto;">  
-          </div>
-
           <div class="child" id="me">
             <img id="mypic" src="me-modified.png" style="max-width:20%">
-            <h1 id="name">Kyle Bomeisl</h1>
-            <div id="intro">
-              <p>Mostly into Data Science, physics, applied mathematics, algorithm design, and Android architecture.</p>
-       
-              <p>But we're both on the internet right now, so I'll do some web dev. Check it out: <br> a cellular automaton I'm rendering in real time, and animating with JavaScript.</p> 
+            <h1 id="name">{Kyle Bomeisl}</h1>
+          </div>
+          <div id="intro"> 
+            <script>
+              var i = 0;              
+              let blurb1 = `//Mostly into Data Science, physics, applied mathematics, algorithm design, and Android architechture.              
+
+`;
+              let blurb3 = "//a cellular automaton I\'m rendering in real time, and animating with JavaScript.";  
+
+              let blurb4 = "//Kind of looks like the ebb and flow of a beautiful digital sea sparkling in the sun...";           
+              
+              setInterval(function(){
+    
+                document.getElementById("intro").innerHTML+=blurb1.charAt(i);
+                i++},10);                         
             
-              <p>Kind of looks like the ebb and flow of a beautiful digital sea sparkling in the sun...</p>
-            </div>
-          </div> 
+              var j = 0;
+              setTimeout(() => {  
+              let blurb2 = "//But we\'re both on the internet right now, so I\'ll do some web dev. Check it out:";           
+              setInterval(function(){
+    
+                document.getElementById("intro").innerHTML+=blurb2.charAt(j);
+                j++},10); 
+              }, 4000);  
+            </script>
+            
+                            
+          </div>
+
+          <div class="codeSquare">
+            <p>
+              
+              <!-- //Render next animation frame in Conway's Game of Life!                                         
+              
+              /                         \\
+            function lifeLogic() {                                                                          //     || //    ||===\\      \\
+              let newGrid = createBooleanArray();                                                           //     ||//     ||   ||      \\
+              for (let i=0; i<row; i++) {                                                                   //     ||\\     ||===//      \\
+                for (let j=0; j<col; j++) {                                                                 //     || \\    ||   ||      \\
+                // tabulate number of alive neighboring cells                                                //     ||  \\   ||===//      \\
+                  let coord = [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[1,-1],[-1,1]];                       //                         \\
+                  let aliveNeighbors = 0;
+              for (d of coord) {
+                let neighborRow = i+d[0];
+                let neighborCol = j+d[1];
+                if (neighborRow >= 0 && neighborCol >= 0 && neighborRow < row && neighborCol < col) {
+                    if (booleanGrid[neighborRow][neighborCol]) {
+                        aliveNeighbors++;
+                    }
+                }
+            }
+              // Set new grid
+            if (booleanGrid[i][j] == 1 && aliveNeighbors < 2) {
+              newGrid[i][j] = 0;
+              }
+            else if (booleanGrid[i][j] == 1 && aliveNeighbors > 3) {
+              newGrid[i][j] = 0;
+            }
+            else if (booleanGrid[i][j] == 0 && aliveNeighbors == 3) {
+              newGrid[i][j] = 1;
+            }
+            else { 
+            newGrid[i][j] = booleanGrid[i][j]; }            
+            }
+          }
+          booleanGrid = newGrid; -->
+        </p>
+        }
+          </div>
+          
 
           <div class="child" id="j5">
             <img src="p5js.svg" style="max-width:50%">
@@ -262,7 +337,34 @@
           </div> 
 
         </div>
-      </header>        
+      </header>   
+      <script>
+        
+        
+         
+        
+        let speed = 30;
+        let speed1 = 35;
+        let speed2 = 35;
+        var i = 0;
+        var j = 0;
+        var k = 0;
+        let loadBar = "#########################################################";
+        let sysData = [window.navigator.appCodeName, window.navigator.appName, window.navigator.appVersion, window.navigator.cookieEnabled, window.navigator.language, window.navigator.userAgent, window.navigator.platform, window.navigator.online];
+        
+        
+
+        // function sysLoad() {
+        //   //first line
+        //   var inner=document.getElementById("blurb").innerHTML;
+        //   setInterval(function(){
+    
+        //   document.getElementById("blurb").innerHTML+=blurb.charAt(i);
+        //   i++},10);   
+          
+        // }
+
+      </script>   
   </body>
 </html>
 

@@ -3,12 +3,15 @@ let booleanGrid = createBooleanArray();
 $(window).height();
 $(window).width();
 
+
 function setup() {
     let master = createCanvas(windowWidth, windowHeight);
-    master.id('master')
+    master.id('master');
     frameRate(10);
-    init()
+    init();
 }
+
+
 
 function windowResized() {
     master = resizeCanvas(windowWidth, windowHeight);
@@ -132,4 +135,5 @@ function init() {
         }   
     }
 }
+
 
