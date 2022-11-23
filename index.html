@@ -176,6 +176,8 @@
 #name {
   font-family: 'Courier New', Courier, monospace;
   font-size: 72px;
+  position: absolute;
+  left: 0;
 }
 
 #intro{
@@ -189,7 +191,7 @@
   font-size: 1.5vw;
   font-weight: bolder;
   text-align: start;
-  color: lightslategrey;
+  color: whitesmoke;
   background: rgba(0, 0, 0, 0.7);
   width: windowWidth;
   white-space: pre-wrap;
@@ -279,44 +281,7 @@
           
 
           <div class="codeSquare">
-            <p>
-              
-              <!-- //Render next animation frame in Conway's Game of Life!                                         
-              
-              /                         \\
-            function lifeLogic() {                                                                          //     || //    ||===\\      \\
-              let newGrid = createBooleanArray();                                                           //     ||//     ||   ||      \\
-              for (let i=0; i<row; i++) {                                                                   //     ||\\     ||===//      \\
-                for (let j=0; j<col; j++) {                                                                 //     || \\    ||   ||      \\
-                // tabulate number of alive neighboring cells                                                //     ||  \\   ||===//      \\
-                  let coord = [[0,1],[0,-1],[1,0],[-1,0],[1,1],[-1,-1],[1,-1],[-1,1]];                       //                         \\
-                  let aliveNeighbors = 0;
-              for (d of coord) {
-                let neighborRow = i+d[0];
-                let neighborCol = j+d[1];
-                if (neighborRow >= 0 && neighborCol >= 0 && neighborRow < row && neighborCol < col) {
-                    if (booleanGrid[neighborRow][neighborCol]) {
-                        aliveNeighbors++;
-                    }
-                }
-            }
-              // Set new grid
-            if (booleanGrid[i][j] == 1 && aliveNeighbors < 2) {
-              newGrid[i][j] = 0;
-              }
-            else if (booleanGrid[i][j] == 1 && aliveNeighbors > 3) {
-              newGrid[i][j] = 0;
-            }
-            else if (booleanGrid[i][j] == 0 && aliveNeighbors == 3) {
-              newGrid[i][j] = 1;
-            }
-            else { 
-            newGrid[i][j] = booleanGrid[i][j]; }            
-            }
-          }
-          booleanGrid = newGrid; -->
-        </p>
-        }
+           
           </div>
           
 
@@ -330,33 +295,6 @@
 
         </div>
       </header>   
-      <script>
-        
-        
-         
-        
-        let speed = 30;
-        let speed1 = 35;
-        let speed2 = 35;
-        var i = 0;
-        var j = 0;
-        var k = 0;
-        let loadBar = "#########################################################";
-        let sysData = [window.navigator.appCodeName, window.navigator.appName, window.navigator.appVersion, window.navigator.cookieEnabled, window.navigator.language, window.navigator.userAgent, window.navigator.platform, window.navigator.online];
-        
-        
-
-        // function sysLoad() {
-        //   //first line
-        //   var inner=document.getElementById("blurb").innerHTML;
-        //   setInterval(function(){
-    
-        //   document.getElementById("blurb").innerHTML+=blurb.charAt(i);
-        //   i++},10);   
-          
-        // }
-
-      </script>   
   </body>
 </html>
 

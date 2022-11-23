@@ -1,6 +1,6 @@
 
 var v = 0;
-let loadBar = `Loading:`+`...###########################################...
+let loadBar = `Loading:`+`...######################################################################################...
 `;
 setInterval(function(){
     document.getElementById("intro").innerHTML+=loadBar.charAt(v);
@@ -20,18 +20,18 @@ let sysData = [`    #Core: `+window.navigator.userAgent+`    |    `, "#Cookies E
         w++
     }
 },5);
-    }, 5000);
+    }, 4000);
 
 var i = 0;
 setTimeout(() => {  
-let blurb1 = `//I'm mostly interested in Android architechture and development, applied math and physics, algorithm design, and scientific programming and simulations.
+let blurb1 = `//I'm mostly interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.
     
 `;           
 setInterval(function(){
     
 document.getElementById("intro").innerHTML+=blurb1.charAt(i);
 i++},5); 
-}, 8000); 
+}, 9500); 
 
 
       
@@ -45,7 +45,7 @@ setInterval(function(){
 
 document.getElementById("intro").innerHTML+=blurb2.charAt(j);
 j++},5); 
-}, 11000); 
+}, 12500); 
               
 
 var k = 0;
@@ -57,7 +57,7 @@ setInterval(function(){
     
 document.getElementById("intro").innerHTML+=blurb3.charAt(k);
 k++},5); 
-}, 14000); 
+}, 15500); 
 
 var h = 0;
 setTimeout(() => {  
@@ -66,4 +66,4 @@ setInterval(function(){
     
 document.getElementById("intro").innerHTML+=blurb4.charAt(h);
 h++},5); 
-}, 17000); 
+}, 18500); 
