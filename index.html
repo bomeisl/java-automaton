@@ -195,6 +195,13 @@
   white-space: pre-wrap;
 }
 
+#desc {
+  white-space: pre-wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .codeSquare {
   position: absolute;
   top: 15%;
@@ -251,31 +258,46 @@
             <h1 id="name">{Kyle Bomeisl}</h1>
           </div>
           <div id="intro"> 
-            
+            <p id="desc">
             <script>
               var i = 0;              
               let blurb1 = `//Mostly into Data Science, physics, applied mathematics, algorithm design, and Android architechture.              
 
-`;
-              let blurb3 = "//a cellular automaton I\'m rendering in real time, and animating with JavaScript.";  
+`; 
 
-              let blurb4 = "//Kind of looks like the ebb and flow of a beautiful digital sea sparkling in the sun...";           
+              //let blurb4 = "//Kind of looks like the ebb and flow of a beautiful digital sea sparkling in the sun...";           
               
               setInterval(function(){
     
                 document.getElementById("intro").innerHTML+=blurb1.charAt(i);
-                i++},10);                         
+                i++},5); 
+            </script>
+            
+            <script>
             
               var j = 0;
               setTimeout(() => {  
-              let blurb2 = "//But we\'re both on the internet right now, so I\'ll do some web dev. Check it out:";           
+              let blurb2 = `//But we\'re both on the internet right now, so I\'ll do some web dev. Check it out:
+              
+`;           
               setInterval(function(){
     
                 document.getElementById("intro").innerHTML+=blurb2.charAt(j);
-                j++},10); 
-              }, 5500);  
+                j++},5); 
+              }, 5000); 
             </script>
-            
+
+            <script>
+              var k = 0;
+              setTimeout(() => {  
+              let blurb3 = `//a cellular automaton I\'m rendering in real time, and animating with JavaScript.`;             
+              setInterval(function(){
+    
+                document.getElementById("intro").innerHTML+=blurb3.charAt(k);
+                k++},5); 
+              }, 8000);  
+            </script>
+          </p>  
                             
           </div>
 
