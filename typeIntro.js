@@ -10,6 +10,7 @@ setInterval(function(){
 
 var w = 0;
 let sysData = [`    #Core: `+window.navigator.userAgent+`    |    `, "#Cookies Enabled: "+window.navigator.cookieEnabled+`    |    `, `#Language: `+window.navigator.language+`    |    `, `#Platform: `+window.navigator.platform+`
+
 `]; 
 
     setTimeout(() => {            
