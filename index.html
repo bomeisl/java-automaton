@@ -96,11 +96,6 @@
   width: 33%;
 }
 
-#master  {
-  width: windowWidth;
-  height: windowHeight;
-}
-
 #column1 {
   position: relative;
 }
@@ -154,17 +149,25 @@
   height: 100px;
   position: absolute;
 }
-#navi,
-#infoi {
+#conway,
+#icons {
   width: 300px;
   height: 500px;
   position: absolute;
   top: 0;
   left: 0;
 }
-#infoi {
+#terminal {
+  position: absolute;
   z-index: 10;
 }
+
+#conway {
+  z-index: auto;
+}
+
+
+
 
 #mypic {
   -moz-box-shadow: 0px 13px 15px #ccc;
@@ -206,13 +209,6 @@
   background: rgba(2, 11, 92, 0.4) 
 }
 
-#introBlurb {
-  position: absolute;
-  top:0;
-  left:0;
-  text-align: left;
-}
-
 @keyframes cursor-blink {
   0% {
     opacity: 0;
@@ -225,28 +221,12 @@
   top: 0;
 }
 
-#line1 {
-  position: absoulte;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 0;
-}
-
-#line2 {
-  position: absoulte;
-  left: 0;
-  top: 0;
-}
-
-#filler {
-  white-space: normal;
-}
-
 .responsive {
   max-width: 100%;
   height: auto;
 }
+
+
 
   </style>
   <body>
@@ -256,12 +236,12 @@
     
     <header>
 
-        <canvas id="navi">
+        <canvas id="conway">
           <script src="automaton.js"></script>
         </canvas>
-        
+
       
-        <div id="infoi" class="responsive"> 
+        <div id="icons" class="responsive"> 
                  
                         
               <a> <img id="em"  src="em.png" class="responsive" style="height:17%; width:auto"> </a>
@@ -286,7 +266,8 @@
           <h1 id="name">{Kyle Bomeisl}</h1>
         </div>
 
-        <div id="intro"><script src="typeIntro.js"></script></div>
+       
+        
           
 
           <div class="codeSquare">

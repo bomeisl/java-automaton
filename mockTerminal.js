@@ -1,9 +1,19 @@
 
+
+text('|', 550, 557, 760, 360)
+
+function setup() {
+    let term = createCanvas(windowWidth, 0.3*windowHeight);
+    term.id('terminalInner')
+    frameRate(10);
+    init();
+}
+
 var v = 0;
 let loadBar = `Loading:`+`...######################################################################################...
 `;
 setInterval(function(){
-    document.getElementById("intro").innerHTML+=loadBar.charAt(v);
+    text('|'+loadBar.charAt(v));
     v++},5);
 
 
