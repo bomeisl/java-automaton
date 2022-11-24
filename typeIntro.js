@@ -20,7 +20,7 @@ let sysData = [`    #Core: `+window.navigator.userAgent+`    |    `, "#Cookies E
         w++
     }
 },5);
-    }, 2000);
+    }, 6000);
 
 var i = 0;
 setTimeout(() => {  
