@@ -60,7 +60,7 @@ function draw() {
     
     // Draw the current string on the page, with some margins
     push();
-    textSize(width/60);
+    textSize(width/80);
     textFont(`Courier`);
     textAlign(LEFT, TOP);
     fill(cyan);
