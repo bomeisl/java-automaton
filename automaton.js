@@ -26,11 +26,11 @@ function draw() {
     var g = color(0, 158, 0);
     var cyan = color(102,178,255);
     let load = "Loading:...####################################################################################################...\n";
-    let sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform;
-    let line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n"
+    let sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform + '  |';
+    let line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n\n"
     let line2 = "//But, hey,  we\'re both on the internet right now, so I\'ll do some web dev. Check it out:\n"
-    let line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript. Conway's specifically.\n\n"
-    let line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows?"
+    let line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript in the background. \'Conway's Game of Life\' specifically. Try clicking to light up some of the pixels if it dies down too much.\n\n"
+    let line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows? "
     let string_array = load + sys + line1 + line2 + line3 + line4;
     var back_color = color(235,235,235);
     background(back_color);
@@ -55,17 +55,17 @@ function draw() {
     var r = color(0,0,0,200);
     fill(r);
     noStroke();
-    rect(0, 0.666*windowHeight, windowWidth, 0.333*windowHeight);
+    rect(0, 0.6*height, width, 0.5*height);
     pop();
     
     // Draw the current string on the page, with some margins
     push();
-    textSize(24);
+    textSize(width/60);
     textFont(`Courier`);
     textAlign(LEFT, TOP);
     fill(cyan);
     stroke(cyan);
-    text(currentString, 0, 0.666*windowHeight, windowWidth, 0.333*windowHeight);
+    text(currentString, 0, 0.6*height, width, 0.5*height);
     pop();
     
     // Increase the current character so that we get a longer and
