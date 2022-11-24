@@ -20,7 +20,7 @@ let sysData = [`    #Core: `+window.navigator.userAgent+`    |    `, "#Cookies E
         w++
     }
 },5);
-    }, 4000);
+    }, 2000);
 
 var i = 0;
 setTimeout(() => {  
@@ -31,7 +31,7 @@ setInterval(function(){
     
 document.getElementById("intro").innerHTML+=blurb1.charAt(i);
 i++},5); 
-}, 9500); 
+}, 8500); 
 
 
       

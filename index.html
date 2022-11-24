@@ -15,16 +15,6 @@
   overflow: hidden;
   }
 
-  
-
-
-  #em {
-    position: absolute;
-    padding: 10px;
-    top: 20px;
-    opacity: 0.7;
-  }
-
   #blurb1 {
     position: absolute;
     padding: 10px;
@@ -32,24 +22,35 @@
     left: 30px;
   }
 
+  #em {
+    position: absolute;
+    padding: 10px;
+    top: 0%;
+    left: 440px;
+    opacity: 0.7;
+  }
+
   #gh {
     position: absolute;
     padding: 10px;
-    top: 110px;
+    top: 20%;
+    left: 440px;
     opacity: 0.6;
   }
 
   #li {
     position: absolute;
     padding: 10px;
-    top: 200px;
+    top: 40%;
+    left: 440px;
     opacity: 0.6;
   }
 
   #tw {
     position: absolute;
     padding: 10px;
-    top: 290px;
+    top: 60%;
+    left: 440px;
     opacity: 0.6;
   }
 
@@ -57,7 +58,8 @@
   #fb {
     position: absolute;
     padding: 10px;
-    top: 380px;
+    top: 80%;
+    left: 440px;
     opacity: 0.6;
   }
 
@@ -89,10 +91,6 @@
   padding: 20px;
 }
 
-.row {
-  position: absolute;
-}
-
 .column-me {
   position: absolute;
   width: 33%;
@@ -104,9 +102,7 @@
 }
 
 #column1 {
-  position: absolute;
-  left: 27%;
-  top: 1%;
+  position: relative;
 }
 
 #conwayCode {
@@ -134,6 +130,12 @@
   left: 93%;
 }
 
+#langs {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
 #row2 {
   position: absolute;
   top:80%;
@@ -154,8 +156,8 @@
 }
 #navi,
 #infoi {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 500px;
   position: absolute;
   top: 0;
   left: 0;
@@ -175,7 +177,7 @@
 
 #name {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 72px;
+  font-size: 2.5vw;
   position: absolute;
   left: 0;
 }
@@ -241,43 +243,50 @@
   white-space: normal;
 }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
   </style>
   <body>
 
     <main></main>
    
     
-      <header>
+    <header>
 
         <canvas id="navi">
           <script src="automaton.js"></script>
         </canvas>
         
       
-          <div id="infoi"> 
-            <div class="foreground" id="column1">          
-              <div class="row">             
-                <a><img id="em" src="em.png" style="height:80px; width:auto"></a>
-              </div>
-              <div class="row">
-                <a href="https://github.io/bomeisl"><img id="gh" src="github-icon.png" style="height:80px; width:auto"></a>
-              </div>
-              <div class="row">
-                <a href="https://www.linkedin.com/in/kyle-bomeisl"><img id="li" src="li.png" style="height:80px; width:auto"></a>
-              </div>
-              <div class="row">
-                <a href="https://twitter.com/kyle_bomeisl"><img id="tw" src="twitter-icon.png" style="height:80px; width:auto"></a>
-              </div>
-              <div class="row">
-                <a href="https://www.facebook.com/profile.php?id=100011069407807"><img id="fb" src="fb-icon.png" style="height:80px; width:auto"></a>             
-            </div>
-          </div>
+        <div id="infoi" class="responsive"> 
+                 
+                        
+              <a> <img id="em"  src="em.png" class="responsive" style="height:17%; width:auto"> </a>
+          
             
-          <div class="child" id="me">
-            <img id="mypic" src="me-modified.png" style="max-width:20%">
-            <h1 id="name">{Kyle Bomeisl}</h1>
-          </div>
-          <div id="intro"><script src="typeIntro.js"></script></div>
+              <a href="https://github.io/bomeisl"> <img id="gh" class="responsive" src="github-icon.png" style="height: 17%; width: auto"> </a>
+           
+            
+              <a href="https://www.linkedin.com/in/kyle-bomeisl"><img id="li" class="responsive" src="li.png" style="height: 17%; width: auto"></a>
+           
+            
+              <a href="https://twitter.com/kyle_bomeisl"><img id="tw" class="responsive" src="twitter-icon.png" style="height: 17%; width: auto"></a>
+           
+            
+             <a href="https://www.facebook.com/profile.php?id=100011069407807"><img id="fb" class="responsive" src="fb-icon.png" style="height: 17%; width: auto"></a> 
+                      
+         
+        </div>
+            
+        <div class="child" id="me">
+          <img id="mypic" class="responsive" src="me-modified.png" style="max-width:20%">
+          <h1 id="name">{Kyle Bomeisl}</h1>
+        </div>
+
+        <div id="intro"><script src="typeIntro.js"></script></div>
           
 
           <div class="codeSquare">
@@ -286,15 +295,19 @@
           
 
           <div class="child" id="j5">
-            <img src="p5js.svg" style="max-width:50%">
+            <img class="responsive" src="p5js.svg" style="max-width:50%">
           </div> 
 
           <div class="child" id="jq">
-            <img src="jq.png" style="max-width:50%">
+            <img class="responsive" src="jq.png" style="max-width:50%">
           </div> 
 
-        </div>
-      </header>   
+          <div class="child" id="langs">
+            <img class="responsive" src="lang.png" style="max-width:30%">
+          </div> 
+
+      
+    </header>   
   </body>
 </html>
 
