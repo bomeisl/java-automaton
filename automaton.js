@@ -1,17 +1,19 @@
-let row = 250, col = 250;
+let row = 200, col = 200;
 let booleanGrid = createBooleanArray();
 $(window).height();
 $(window).width();
 
-// Which character in the string are we up to on the typewriter
 let currentCharacter = 0;
+
+// Which character in the string are we up to on the typewriter
 
 
 
 function setup() {
-    let master = createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight);
     frameRate(10);
     init();
+    
 }
 
 
@@ -22,22 +24,34 @@ function windowResized() {
 
 
 function draw() {
-    var white = color(255,255,255);
-    var g = color(0, 158, 0);
+    var r = color(0,0,0,200);
     var cyan = color(102,178,255);
-    let load = "Loading:...####################################################################################################...\n";
-    let sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform + '  |';
-    let line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n\n"
-    let line2 = "//But, hey,  we\'re both on the internet right now, so I\'ll do some web dev. Check it out:\n"
-    let line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript in the background. \'Conway's Game of Life\' specifically. Try clicking to light up some of the pixels if it dies down too much.\n\n"
-    let line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows? "
-    let string_array = load + sys + line1 + line2 + line3 + line4;
     var back_color = color(235,235,235);
+    
+    var speed = 200;
+    var cursor = '|';
+    setInterval(() => {
+        if(cursor.Alpha == 255) {
+            cursor.setAlpha(0);
+        }else {
+            cursor.setAlpha(255);
+        }
+    }, speed);
+
+    
+    var load = "Loading:...####################################################################################################...\n";
+    var sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform + '  |';
+    var line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n\n"
+    var line2 = "//But, hey,  we\'re both on the internet right now, so I\'ll do some web dev. Check it out:\n"
+    var line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript in the background. \'Conway's Game of Life\' specifically. Try clicking to light up some of the pixels if it dies down too much.\n\n"
+    var line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows? "
+    let string_array = load + sys + line1 + line2 + line3 + line4;
+    
     background(back_color);
     
     // When you draw text with 4 numbers you create a box that the text fits in
     // x, y position of box followed by width and height of the box    
-
+    
     // render the automaton
     for (let i=0; i<row; i++) {
         for (let j=0; j<col; j++) {
@@ -50,9 +64,14 @@ function draw() {
         }
 
     }
-    let currentString = string_array.substring(0, currentCharacter);
+    
+
+    let currentString = string_array.substring(0, currentCharacter) + cursor;
+    
+    
+
     push();
-    var r = color(0,0,0,200);
+    
     fill(r);
     noStroke();
     rect(0, 0.6*height, width, 0.5*height);
@@ -71,8 +90,8 @@ function draw() {
     // Increase the current character so that we get a longer and
     // longer substring above. Using fractional numbers allows us to
     // slow down the pace.
-    currentCharacter += 3;
-    currentCharacter += random(0,1); // Try adding random amounts for a more "naturalistic" pace of typing
+    currentCharacter += 4;
+    currentCharacter += random(1,3); // Try adding random amounts for a more "naturalistic" pace of typing
     noStroke()
     lifeLogic()
 }
@@ -161,47 +180,6 @@ function init() {
     }
 }
 
-function mockTerminal() {
-    termWidth = windowWidth;
-    termHeight = 0.333*windowHeight;
-    //var r = color(0,0,0,200);
-    
 
-    let loadBar = "Loading: ...######################################################################################...";
-    let currentCharacter = 0;
-    let currentString = string.substring(0, currentCharacter);
-    
-
-    var loading = '';
-    var sys = '';
-    var line1 = '';
-    var line2 = '';
-    var line3 = '';
-    var line4 = '';
-
-
-    push();
-    fill(r);
-    rect(0, 0.666*windowHeight, termWidth, termHeight);
-    pop();
-    
-    
-    push();
-    textSize(32);
-    textFont(`Courier`);
-    textAlign(LEFT, TOP);
-    fill(t);
-    text(currentString, 0, 0.666*windowHeight, termWidth, termHeight);
-    pop();
-    
-    // Increase the current character so that we get a longer and
-    // longer substring above. Using fractional numbers allows us to
-    // slow down the pace.
-    currentCharacter += 1;
-    currentCharacter += random(0,0.5);
-       
-    
-
-}
 
 
