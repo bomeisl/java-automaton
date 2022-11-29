@@ -1,19 +1,26 @@
 let row = 200, col = 200;
 let booleanGrid = createBooleanArray();
+var currentCharacter = 0;
 $(window).height();
 $(window).width();
 
-let currentCharacter = 0;
+
+
+
+
+
+    
+
 
 // Which character in the string are we up to on the typewriter
 
 
 
-function setup() {
+function setup() {   
     createCanvas(windowWidth, windowHeight);
     frameRate(10);
     init();
-    
+ 
 }
 
 
@@ -22,12 +29,7 @@ function windowResized() {
     master = resizeCanvas(windowWidth, windowHeight);
 }
 
-
-function draw() {
-    var r = color(0,0,0,200);
-    var cyan = color(102,178,255);
-    var back_color = color(235,235,235);
-    
+function cursorBlink() {
     var speed = 200;
     var cursor = '|';
     setInterval(() => {
@@ -38,16 +40,27 @@ function draw() {
         }
     }, speed);
 
-    
-    var load = "Loading:...####################################################################################################...\n";
-    var sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform + '  |';
-    var line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n\n"
-    var line2 = "//But, hey,  we\'re both on the internet right now, so I\'ll do some web dev. Check it out:\n"
-    var line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript in the background. \'Conway's Game of Life\' specifically. Try clicking to light up some of the pixels if it dies down too much.\n\n"
-    var line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows? "
+}
+
+function draw() {
+    let load = "Loading:...####################################################################################################...\n";
+    let sys = '#Core:  '+ window.navigator.userAgent + '\n  |   ' + '#Cookies Enabled: ' +  window.navigator.cookieEnabled + '  |  '+ '#Language: '+ window.navigator.language+'    |    ' + '#Platform: ' + window.navigator.platform + '  |';
+    let line1 = "\n\n//Hello, I'm Kyle. I'm quite interested in Android architechture and development, applied math and physics, algorithm design and optimization, and scientific programming and computational simulation of condensed matter systems.\n\n"
+    let line2 = "//But, hey,  we\'re both on the internet right now, so I\'ll do some web dev. Check it out:\n"
+    let line3 = "//It's a cellular automaton that I\'m calculating in real time and animating with JavaScript in the background. \'Conway's Game of Life\' specifically. Try clicking to light up some of the pixels if it dies down too much.\n\n"
+    let line4 = "//Doesn't it look like a beautiful digital sea sparkling in the sun as it ebbs and flows? "
     let string_array = load + sys + line1 + line2 + line3 + line4;
+      
+    var speed = 200;
+    var cursor = '|';
     
+   
+    var back_color = color(235,235,235);
+    var r = color(0,0,0,200);
+    var cyan = color(102,178,255);
+    var back_color = color(235,235,235);
     background(back_color);
+
     
     // When you draw text with 4 numbers you create a box that the text fits in
     // x, y position of box followed by width and height of the box    
@@ -64,8 +77,36 @@ function draw() {
         }
 
     }
-    
+    terminal();
+    noStroke();
+    lifeLogic();
+}
 
+function createBooleanArray() {
+    let output = [];
+    for (let i=0; i<row; i++) {
+        let row = [];
+        for (let j=0; j<col; j++) {
+            row.push(false)
+        }
+        output.push(row)
+    }
+    return output
+} 
+
+function sumBooleanArray(array) {
+    var total = 0;
+    for (let i=0; i<row; i++) {
+        for (let j=0; j<col; j++) {
+            if (array[i][j] == true) {
+                total++;
+            }
+        }
+    }
+    return total;
+}
+
+function terminal() {
     let currentString = string_array.substring(0, currentCharacter) + cursor;
     
     
@@ -92,32 +133,6 @@ function draw() {
     // slow down the pace.
     currentCharacter += 4;
     currentCharacter += random(1,3); // Try adding random amounts for a more "naturalistic" pace of typing
-    noStroke()
-    lifeLogic()
-}
-
-function createBooleanArray() {
-    let output = [];
-    for (let i=0; i<row; i++) {
-        let row = [];
-        for (let j=0; j<col; j++) {
-            row.push(false)
-        }
-        output.push(row)
-    }
-    return output
-} 
-
-function sumBooleanArray(array) {
-    var total = 0;
-    for (let i=0; i<row; i++) {
-        for (let j=0; j<col; j++) {
-            if (array[i][j] == true) {
-                total++
-            }
-        }
-    }
-    return total
 }
 
 ////////   |||||||||   ||\    |||   \\\        //\\        ///    //\\    \\   //    //    //###///    ///======      ///\\\       |||\\\        ///|||    |||=====     | |
@@ -180,6 +195,9 @@ function init() {
     }
 }
 
+function terminal() {
 
+    
+}
 
 
